@@ -20,30 +20,38 @@ typedef struct
 } perf_t;
 
 perf_t global_perf;
-LARGE_INTEGER start_perf_counter, end_perf_counter, false_freq_start, false_freq_end;
-long long endtimestamp, starttimestamp;
 
-static void start_performace_measurement()
+typedef struct
 {
-    QueryPerformanceCounter(&start_perf_counter);
-    starttimestamp = __rdtsc();
-    QueryPerformanceFrequency(&false_freq_start);
+    long long endtimestamp;
+    long long starttimestamp;
+    LARGE_INTEGER start_perf_counter;
+    LARGE_INTEGER end_perf_counter;
+    LARGE_INTEGER false_freq_start;
+    LARGE_INTEGER false_freq_end;
+} perf_temps_t;
+
+static void start_performace_measurement(perf_temps_t * blank_perf_entry)
+{
+    QueryPerformanceFrequency(&blank_perf_entry->false_freq_start);
+    QueryPerformanceCounter(&blank_perf_entry->start_perf_counter);
+    blank_perf_entry->starttimestamp = __rdtsc();
 }
 
-static perf_t const * end_performace_measurement()
+static perf_t const * end_performace_measurement(perf_temps_t * started_perf_entry)
 {
-    QueryPerformanceCounter(&end_perf_counter);
-    endtimestamp = __rdtsc();
-    QueryPerformanceFrequency(&false_freq_end);
+    started_perf_entry->endtimestamp = __rdtsc();
+    QueryPerformanceCounter(&started_perf_entry->end_perf_counter);
+    QueryPerformanceFrequency(&started_perf_entry->false_freq_end);
 
-    double false_freq_ave = (false_freq_start.QuadPart+false_freq_end.QuadPart)/2;
+    double false_freq_ave = (started_perf_entry->false_freq_start.QuadPart+started_perf_entry->false_freq_end.QuadPart)/2;
 
-    double false_elapsed_sec = (double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart)/(false_freq_ave);
-    double actual_freq = ((double) (endtimestamp-starttimestamp))/false_elapsed_sec;
+    double false_elapsed_sec = (double)(started_perf_entry->end_perf_counter.QuadPart - started_perf_entry->start_perf_counter.QuadPart)/(false_freq_ave);
+    double actual_freq = ((double) (started_perf_entry->endtimestamp-started_perf_entry->starttimestamp))/false_elapsed_sec;
 
-    double real_elapsed_time = (endtimestamp-starttimestamp)/actual_freq;
+    double real_elapsed_time = (started_perf_entry->endtimestamp-started_perf_entry->starttimestamp)/actual_freq;
 
-    global_perf.elapsed_cycles = endtimestamp - starttimestamp;
+    global_perf.elapsed_cycles = started_perf_entry->endtimestamp - started_perf_entry->starttimestamp;
     global_perf.elapsed_time = real_elapsed_time;
     global_perf.measured_freq = actual_freq;
 

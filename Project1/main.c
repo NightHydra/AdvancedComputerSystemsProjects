@@ -112,16 +112,18 @@ void run_test(command_args_t const * runtime_options)
     NUMBER_TYPE arr2[TESTSIZE] __attribute__((aligned(4*sizeof(NUMBER_TYPE))));
 #endif
 
+    perf_temps_t perf_vars_on_stack;
     fill_in_array_with_random_numbers(arr1, sizeof(arr1)/sizeof(NUMBER_TYPE));
     fill_in_array_with_random_numbers(arr2, sizeof(arr2)/sizeof(NUMBER_TYPE));
 
     if (runtime_options->test_to_run == REDUCE)
     {
-        start_performace_measurement();
+
+        start_performace_measurement(&perf_vars_on_stack);
 
         NUMBER_TYPE out = dot_product(arr1, arr2, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
-        perf_t const * runtimeperformance = end_performace_measurement();
+        perf_t const * runtimeperformance = end_performace_measurement(&perf_vars_on_stack);
 
         printf("Performance Freq: %lf\n", runtimeperformance->measured_freq);
         printf("Calculated %lf in %lld cycles (%.9lf seconds)", out, runtimeperformance->elapsed_cycles,
