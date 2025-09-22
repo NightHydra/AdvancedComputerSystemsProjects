@@ -3,7 +3,8 @@ project(ACS_Project1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(sample_build main.c)
+add_executable(sample_build main.c
+        myperfmodule.h)
 
 add_compile_options("-fno-vectorize")
 

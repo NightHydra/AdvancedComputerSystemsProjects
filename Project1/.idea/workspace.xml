@@ -31,7 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myperfmodule.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
@@ -146,7 +146,7 @@
       <workItem from="1758117336356" duration="609000" />
       <workItem from="1758231940390" duration="28000" />
       <workItem from="1758233028568" duration="15000" />
-      <workItem from="1758569116618" duration="3772000" />
+      <workItem from="1758569116618" duration="5101000" />
     </task>
     <servers />
   </component>

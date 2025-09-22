@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <intrin.h> // For __rdtsc()
+#include "myperfmodule.h"
 
 
 
@@ -31,11 +32,6 @@ typedef struct
     kernel_type_t test_to_run;
 } command_args_t;
 
-/*
- * The below code is global for a reason, I want it statically inlined for fast performance
- * measurements.
- */
-//LARGE_INTEGER start_perf_counter, end_perf_counter, false_freq;
 
 
 
@@ -121,24 +117,15 @@ void run_test(command_args_t const * runtime_options)
 
     if (runtime_options->test_to_run == REDUCE)
     {
-        LARGE_INTEGER start_perf_counter, end_perf_counter;
-        LARGE_INTEGER perfmormance_freq;
-        QueryPerformanceFrequency(&perfmormance_freq);
-
-        QueryPerformanceCounter(&start_perf_counter);
-        unsigned long long startstamp = __rdtsc();
+        start_performace_measurement();
 
         NUMBER_TYPE out = dot_product(arr1, arr2, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
-        QueryPerformanceCounter(&end_perf_counter);
-        unsigned long long endstamp = __rdtsc();
+        perf_t const * runtimeperformance = end_performace_measurement();
 
-        double elapsed_sec = (double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart)/(perfmormance_freq.QuadPart);
-        double frequency = ((double)(endstamp-startstamp))/elapsed_sec;
-        printf("Performance Freq: %lf\n", frequency);
-
-        double timediff = ((double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart))/(double)(frequency);
-        printf("Calculated %lf in %lld cycles (%.9lf seconds)", out, endstamp - startstamp, timediff);
+        printf("Performance Freq: %lf\n", runtimeperformance->measured_freq);
+        printf("Calculated %lf in %lld cycles (%.9lf seconds)", out, runtimeperformance->elapsed_cycles,
+            runtimeperformance->elapsed_time);
     }
 
     if (runtime_options->test_to_run == MULTIPLY)
