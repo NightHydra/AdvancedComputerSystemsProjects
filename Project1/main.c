@@ -12,7 +12,7 @@
 #endif
 #define NUMMIN (-100)
 #define NUMMAX (100)
-#define TESTSIZE (10000)
+#define TESTSIZE (16384)
 
 #ifndef ALIGN_ARRAYS
 #define ALIGN_ARRAYSx
@@ -30,6 +30,14 @@ typedef struct
 {
     kernel_type_t test_to_run;
 } command_args_t;
+
+/*
+ * The below code is global for a reason, I want it statically inlined for fast performance
+ * measurements.
+ */
+//LARGE_INTEGER start_perf_counter, end_perf_counter, false_freq;
+
+
 
 NUMBER_TYPE dot_product(NUMBER_TYPE const * a, NUMBER_TYPE const * b, int len);
 void elementwise_multiply(NUMBER_TYPE const * a, NUMBER_TYPE const * b, NUMBER_TYPE * result, int len);
@@ -114,18 +122,22 @@ void run_test(command_args_t const * runtime_options)
     if (runtime_options->test_to_run == REDUCE)
     {
         LARGE_INTEGER start_perf_counter, end_perf_counter;
-        LARGE_INTEGER frequency;
+        LARGE_INTEGER perfmormance_freq;
+        QueryPerformanceFrequency(&perfmormance_freq);
 
-        QueryPerformanceFrequency(&frequency);
         QueryPerformanceCounter(&start_perf_counter);
-        long long startstamp = __rdtsc();
+        unsigned long long startstamp = __rdtsc();
 
         NUMBER_TYPE out = dot_product(arr1, arr2, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
         QueryPerformanceCounter(&end_perf_counter);
-        long long endstamp = __rdtsc();
+        unsigned long long endstamp = __rdtsc();
 
-        double timediff = ((double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart))/(double)(frequency.QuadPart);
+        double elapsed_sec = (double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart)/(perfmormance_freq.QuadPart);
+        double frequency = ((double)(endstamp-startstamp))/elapsed_sec;
+        printf("Performance Freq: %lf\n", frequency);
+
+        double timediff = ((double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart))/(double)(frequency);
         printf("Calculated %lf in %lld cycles (%.9lf seconds)", out, endstamp - startstamp, timediff);
     }
 
@@ -144,19 +156,16 @@ void run_test(command_args_t const * runtime_options)
 
         QueryPerformanceFrequency(&frequency);
         QueryPerformanceCounter(&start_perf_counter);
-        long long startstamp = __rdtsc();
+        unsigned long long startstamp = __rdtsc();
 
         elementwise_multiply(arr1, arr2, res, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
         printf("%d\n", res[0]);
 
         QueryPerformanceCounter(&end_perf_counter);
-        long long endstamp = __rdtsc();
+        unsigned long long endstamp = __rdtsc();
 
         double timediff = ((double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart))/(double)(frequency.QuadPart);
         printf("Elementwise Multiply Test: %lld cycles (%.9lf seconds)", endstamp - startstamp, timediff);
     }
-
-
-
 }
