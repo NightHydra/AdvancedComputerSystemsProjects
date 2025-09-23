@@ -13,7 +13,7 @@
 #endif
 #define NUMMIN (-100)
 #define NUMMAX (100)
-#define TESTSIZE (16384)
+#define TESTSIZE (1000000)
 
 #ifndef ALIGN_ARRAYS
 #define ALIGN_ARRAYSx
@@ -138,21 +138,16 @@ void run_test(command_args_t const * runtime_options)
         NUMBER_TYPE res[TESTSIZE] __attribute__((aligned(4*sizeof(NUMBER_TYPE))));
 #endif
 
-        LARGE_INTEGER start_perf_counter, end_perf_counter;
-        LARGE_INTEGER frequency;
-
-        QueryPerformanceFrequency(&frequency);
-        QueryPerformanceCounter(&start_perf_counter);
-        unsigned long long startstamp = __rdtsc();
+        start_performace_measurement();
 
         elementwise_multiply(arr1, arr2, res, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
-        printf("%d\n", res[0]);
+        perf_t const * runtimeperformance = end_performace_measurement();
 
-        QueryPerformanceCounter(&end_perf_counter);
-        unsigned long long endstamp = __rdtsc();
-
-        double timediff = ((double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart))/(double)(frequency.QuadPart);
-        printf("Elementwise Multiply Test: %lld cycles (%.9lf seconds)", endstamp - startstamp, timediff);
+        printf("Performance Freq: %lf\n", runtimeperformance->measured_freq);
+        printf("Calculated [%lf .... %lf] in %lld cycles (%.9lf seconds)", res[0],
+            res[sizeof(res)/sizeof(NUMBER_TYPE)-1],
+            runtimeperformance->elapsed_cycles,
+            runtimeperformance->elapsed_time);
     }
 }

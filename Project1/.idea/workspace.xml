@@ -20,6 +20,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
+      <config projectName="ACS_Project1" targetName="vectorized_build" />
       <config projectName="ACS_Project1" targetName="sample_build" />
     </generated>
   </component>
@@ -31,7 +32,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myperfmodule.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
@@ -44,24 +44,26 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release-MVSC" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release-MinGW" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "NightHydra"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NightHydra&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/NightHydra/AdvancedComputerSystemsProjects",
-    "accountId": "84086b11-b1b0-4643-b48c-63b53aa71920"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NightHydra/AdvancedComputerSystemsProjects&quot;,
+    &quot;accountId&quot;: &quot;84086b11-b1b0-4643-b48c-63b53aa71920&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/cmake-build-release-mingw/CMakeFiles/sample_build.dir/main.c.i" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/myperfmodule.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -80,6 +82,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "CMake Application.MultiplyBuild.executor": "Run",
+    "CMake Application.MultiplyVectorizedBuild.executor": "Run",
     "CMake Application.ReduceBuild.executor": "Run",
     "CMake Application.sample_build.executor": "Run",
     "CMake Application.untitled.executor": "Run",
@@ -111,7 +114,7 @@
       <recent name="$USER_HOME$/OneDrive - Rensselaer Polytechnic Institute/Documents/Coursework/ECSE-Coursework/ComputerHardwareDesign/Labs/lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.ReduceBuild">
+  <component name="RunManager" selected="CMake Application.MultiplyVectorizedBuild">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -122,7 +125,17 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MultiplyVectorizedBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="vectorized_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="vectorized_build">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReduceBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="sample_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="sample_build">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReduceVectorized" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="vectorized_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="vectorized_build">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -130,6 +143,8 @@
     <list>
       <item itemvalue="CMake Application.MultiplyBuild" />
       <item itemvalue="CMake Application.ReduceBuild" />
+      <item itemvalue="CMake Application.MultiplyVectorizedBuild" />
+      <item itemvalue="CMake Application.ReduceVectorized" />
     </list>
   </component>
   <component name="TaskManager">
