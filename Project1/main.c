@@ -5,18 +5,17 @@
 #include <time.h>
 #include <intrin.h> // For __rdtsc()
 #include "myperfmodule.h"
-
-
-
 #ifndef NUMBER_TYPE
 #define NUMBER_TYPE float
 #endif
 #define NUMMIN (-100)
 #define NUMMAX (100)
-#define TESTSIZE (1000000)
+#define TESTSIZE (10000)
+
+#define NUM_ITERATIONS_TO_RUN (100)
 
 #ifndef ALIGN_ARRAYS
-#define ALIGN_ARRAYSx
+#define ALIGN_ARRAYS
 #endif
 
 typedef enum
@@ -39,7 +38,7 @@ NUMBER_TYPE dot_product(NUMBER_TYPE const * a, NUMBER_TYPE const * b, int len);
 void elementwise_multiply(NUMBER_TYPE const * a, NUMBER_TYPE const * b, NUMBER_TYPE * result, int len);
 void read_command_line_args();
 void fill_in_array_with_random_numbers(NUMBER_TYPE * arr, unsigned int len);
-void run_test(command_args_t const * runtime_options);
+perf_t const * run_test(command_args_t const * runtime_options);
 
 int main(int argc, char * argv[])
 {
@@ -49,7 +48,20 @@ int main(int argc, char * argv[])
     command_args_t runtime_options;
     read_command_line_args(argc, argv, &runtime_options);
 
-    run_test(&runtime_options);
+    perf_t average_perf;
+    average_perf.elapsed_cycles = 0;
+    average_perf.elapsed_time = 0;
+    average_perf.measured_freq = 0.0;
+
+    for (unsigned int i = 0; i<NUM_ITERATIONS_TO_RUN; ++i)
+    {
+        perf_t const * test_perf = run_test(&runtime_options);
+        average_perf.elapsed_cycles += test_perf->elapsed_cycles;
+        average_perf.elapsed_time += test_perf->elapsed_time;
+        average_perf.measured_freq += test_perf->measured_freq;
+    }
+    printf("%lf, %.10lf, %lf", (double) average_perf.elapsed_cycles / NUM_ITERATIONS_TO_RUN,
+        average_perf.elapsed_time / NUM_ITERATIONS_TO_RUN, average_perf.measured_freq / NUM_ITERATIONS_TO_RUN);
 
     return 0;
 }
@@ -91,6 +103,16 @@ void elementwise_multiply(NUMBER_TYPE const * a, NUMBER_TYPE const * b, NUMBER_T
     }
 }
 
+NUMBER_TYPE stream(NUMBER_TYPE const * a, int len)
+{
+    double y = 0.0;
+    for (unsigned int i = 0; i < len; i++)
+    {
+        y += a[i];
+    }
+    return y;
+}
+
 
 void fill_in_array_with_random_numbers(NUMBER_TYPE * arr, unsigned int len)
 {
@@ -100,8 +122,12 @@ void fill_in_array_with_random_numbers(NUMBER_TYPE * arr, unsigned int len)
     }
 }
 
-void run_test(command_args_t const * runtime_options)
+perf_t const * run_test(command_args_t const * runtime_options)
 {
+    FILE* logfile = fopen("log.txt", "a");
+
+    perf_t const * runtimeperformance;
+
 #ifndef ALIGN_ARRAYS
     NUMBER_TYPE arr1[TESTSIZE];
     NUMBER_TYPE arr2[TESTSIZE];
@@ -115,16 +141,28 @@ void run_test(command_args_t const * runtime_options)
     fill_in_array_with_random_numbers(arr1, sizeof(arr1)/sizeof(NUMBER_TYPE));
     fill_in_array_with_random_numbers(arr2, sizeof(arr2)/sizeof(NUMBER_TYPE));
 
+    if (runtime_options->test_to_run == STREAM)
+    {
+        start_performace_measurement();
+
+        NUMBER_TYPE out = stream(arr1, sizeof(arr1)/sizeof(NUMBER_TYPE));
+
+        runtimeperformance = end_performace_measurement();
+
+        fprintf(logfile, "Performance Freq: %lf\n", runtimeperformance->measured_freq);
+        fprintf(logfile, "Calculated %lf in %lld cycles (%.9lf seconds)", out, runtimeperformance->elapsed_cycles,
+            runtimeperformance->elapsed_time);
+    }
     if (runtime_options->test_to_run == REDUCE)
     {
         start_performace_measurement();
 
         NUMBER_TYPE out = dot_product(arr1, arr2, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
-        perf_t const * runtimeperformance = end_performace_measurement();
+        runtimeperformance = end_performace_measurement();
 
-        printf("Performance Freq: %lf\n", runtimeperformance->measured_freq);
-        printf("Calculated %lf in %lld cycles (%.9lf seconds)", out, runtimeperformance->elapsed_cycles,
+        fprintf(logfile, "Performance Freq: %lf\n", runtimeperformance->measured_freq);
+        fprintf(logfile, "Calculated %lf in %lld cycles (%.9lf seconds)", out, runtimeperformance->elapsed_cycles,
             runtimeperformance->elapsed_time);
     }
 
@@ -142,12 +180,14 @@ void run_test(command_args_t const * runtime_options)
 
         elementwise_multiply(arr1, arr2, res, sizeof(arr1)/sizeof(NUMBER_TYPE));
 
-        perf_t const * runtimeperformance = end_performace_measurement();
+        runtimeperformance = end_performace_measurement();
 
-        printf("Performance Freq: %lf\n", runtimeperformance->measured_freq);
-        printf("Calculated [%lf .... %lf] in %lld cycles (%.9lf seconds)", res[0],
+        fprintf(logfile,"Performance Freq: %lf\n", runtimeperformance->measured_freq);
+        fprintf(logfile, "Calculated [%lf .... %lf] in %lld cycles (%.9lf seconds)", res[0],
             res[sizeof(res)/sizeof(NUMBER_TYPE)-1],
             runtimeperformance->elapsed_cycles,
             runtimeperformance->elapsed_time);
     }
+    fclose(logfile);
+    return runtimeperformance;
 }
