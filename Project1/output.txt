@@ -1,9 +1,22 @@
 average cycles, average time, average clk frequency 
+========= Part 1: Baseline vs Auto-Vectorized ======== 
 ===== Running Non-Vectorized Tests (STREAM, REDUCE, MULTIPLY) ===== 
-23827.760000, 0.0000095430, 2496970179.748675 
-23702.380000, 0.0000094920, 2497092288.203972 
-9028.130000, 0.0000036130, 2499516973.472165 
-===== Running Vectorized Tests ===== 
-24160.290000, 0.0000097280, 2487987690.200590 
-23784.140000, 0.0000095320, 2495320873.971289 
-3528.930000, 0.0000014150, 2495566595.093950 
+ 
+L1 Cache Size 
+ 
+ 
+ 
+ 
+L2 Cache Size 
+ 
+ 
+ 
+ 
+LLC Cache Size 
+ 
+ 
+ 
+ 
+DRAM Cache Size 
+ 
+ 

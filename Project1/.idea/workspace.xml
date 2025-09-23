@@ -20,8 +20,22 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="ACS_Project1" targetName="vectorized_build" />
-      <config projectName="ACS_Project1" targetName="sample_build" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_float_DRAM" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_float_LLC" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_float_L2" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_float_L1" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_float_LLC" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_float_DRAM" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_double_L1" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_double_L1" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_double_L2" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_double_DRAM" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_double_LLC" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_double_L2" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_float_L2" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_float_L1" />
+      <config projectName="ACS_Project1" targetName="NO_VECTORIZE_double_DRAM" />
+      <config projectName="ACS_Project1" targetName="VECTORIZE_double_LLC" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -32,9 +46,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/run_tests.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_tests.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_tests.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,32 +142,112 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiplyBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="sample_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="sample_build">
+    <configuration name="MultiplyBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_DRAM">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiplyVectorizedBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="vectorized_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="vectorized_build">
+    <configuration name="MultiplyVectorizedBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_DRAM">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReduceBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="sample_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="sample_build">
+    <configuration name="NO_VECTORIZE_double_DRAM" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_DRAM">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReduceVectorized" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="vectorized_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="vectorized_build">
+    <configuration name="NO_VECTORIZE_double_L1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_L1" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_L1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel STREAM" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="sample_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="sample_build">
+    <configuration name="NO_VECTORIZE_double_L2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_L2" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_L2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamVectorized" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel STREAM" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="vectorized_build" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="vectorized_build">
+    <configuration name="NO_VECTORIZE_double_LLC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_LLC" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_LLC">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NO_VECTORIZE_float_DRAM" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_float_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_float_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NO_VECTORIZE_float_L1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_float_L1" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_float_L1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NO_VECTORIZE_float_L2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_float_L2" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_float_L2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NO_VECTORIZE_float_LLC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_float_LLC" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_float_LLC">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReduceBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReduceVectorized" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel REDUCE" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel STREAM" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamVectorized" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel STREAM" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_double_DRAM" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_double_L1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_L1" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_L1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_double_L2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_L2" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_L2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_double_LLC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_double_LLC" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_double_LLC">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_float_DRAM" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_float_DRAM" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_float_DRAM">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_float_L1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_float_L1" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_float_L1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_float_L2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_float_L2" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_float_L2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VECTORIZE_float_LLC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="VECTORIZE_float_LLC" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="VECTORIZE_float_LLC">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -177,6 +274,22 @@
       <item itemvalue="CMake Application.ReduceVectorized" />
       <item itemvalue="CMake Application.StreamBuild" />
       <item itemvalue="CMake Application.StreamVectorized" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_double_DRAM" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_double_L1" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_double_L2" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_double_LLC" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_float_DRAM" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_float_L1" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_float_L2" />
+      <item itemvalue="CMake Application.NO_VECTORIZE_float_LLC" />
+      <item itemvalue="CMake Application.VECTORIZE_double_DRAM" />
+      <item itemvalue="CMake Application.VECTORIZE_double_L1" />
+      <item itemvalue="CMake Application.VECTORIZE_double_L2" />
+      <item itemvalue="CMake Application.VECTORIZE_double_LLC" />
+      <item itemvalue="CMake Application.VECTORIZE_float_DRAM" />
+      <item itemvalue="CMake Application.VECTORIZE_float_L1" />
+      <item itemvalue="CMake Application.VECTORIZE_float_L2" />
+      <item itemvalue="CMake Application.VECTORIZE_float_LLC" />
       <item itemvalue="Shell Script.CollectData" />
     </list>
   </component>

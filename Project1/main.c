@@ -10,7 +10,10 @@
 #endif
 #define NUMMIN (-100)
 #define NUMMAX (100)
+
+#ifndef TESTSIZE
 #define TESTSIZE (10000)
+#endif
 
 #define NUM_ITERATIONS_TO_RUN (100)
 
@@ -134,8 +137,8 @@ perf_t const * run_test(command_args_t const * runtime_options)
 #endif
 
 #ifdef ALIGN_ARRAYS
-    NUMBER_TYPE arr1[TESTSIZE] __attribute__((aligned(4*sizeof(NUMBER_TYPE))));
-    NUMBER_TYPE arr2[TESTSIZE] __attribute__((aligned(4*sizeof(NUMBER_TYPE))));
+    NUMBER_TYPE arr1[TESTSIZE] __attribute__((aligned(512)));
+    NUMBER_TYPE arr2[TESTSIZE] __attribute__((aligned(512)));
 #endif
 
     fill_in_array_with_random_numbers(arr1, sizeof(arr1)/sizeof(NUMBER_TYPE));
@@ -173,7 +176,7 @@ perf_t const * run_test(command_args_t const * runtime_options)
 #endif
 
 #ifdef ALIGN_ARRAYS
-        NUMBER_TYPE res[TESTSIZE] __attribute__((aligned(4*sizeof(NUMBER_TYPE))));
+        NUMBER_TYPE res[TESTSIZE] __attribute__((aligned(512)));
 #endif
 
         start_performace_measurement();
