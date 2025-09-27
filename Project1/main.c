@@ -15,11 +15,14 @@
 #define TESTSIZE (10000)
 #endif
 
-#define NUM_ITERATIONS_TO_RUN (100)
-
-#ifndef ALIGN_ARRAYS
-#define ALIGN_ARRAYS
+#ifndef STRIDE_LEN
+#define STRIDE_LEN (2)
 #endif
+
+#define NUM_ITERATIONS_TO_RUN (20)
+
+
+#define scalar_value (3.72)
 
 typedef enum
 {
@@ -51,20 +54,20 @@ int main(int argc, char * argv[])
     command_args_t runtime_options;
     read_command_line_args(argc, argv, &runtime_options);
 
-    perf_t average_perf;
-    average_perf.elapsed_cycles = 0;
-    average_perf.elapsed_time = 0;
-    average_perf.measured_freq = 0.0;
+    perf_t perfrun;
 
+    for (unsigned int i = 0; i<10; ++i)
+    {
+        perfrun = *run_test(&runtime_options);
+    }
+    printf("Cycles,Time,CPU Frequency,GFLOPS\n");
     for (unsigned int i = 0; i<NUM_ITERATIONS_TO_RUN; ++i)
     {
-        perf_t const * test_perf = run_test(&runtime_options);
-        average_perf.elapsed_cycles += test_perf->elapsed_cycles;
-        average_perf.elapsed_time += test_perf->elapsed_time;
-        average_perf.measured_freq += test_perf->measured_freq;
+        perfrun = *run_test(&runtime_options);
+        printf("%lf, %.10lf, %lf, %lf\n", (double) perfrun.elapsed_cycles,
+            perfrun.elapsed_time, perfrun.measured_freq, TESTSIZE / perfrun.elapsed_time);
     }
-    printf("%lf, %.10lf, %lf", (double) average_perf.elapsed_cycles / NUM_ITERATIONS_TO_RUN,
-        average_perf.elapsed_time / NUM_ITERATIONS_TO_RUN, average_perf.measured_freq / NUM_ITERATIONS_TO_RUN);
+
 
     return 0;
 }
@@ -92,26 +95,36 @@ void read_command_line_args(int argc, char const * const * const args, command_a
 NUMBER_TYPE dot_product(NUMBER_TYPE const * a, NUMBER_TYPE const * b, int len)
 {
     NUMBER_TYPE result = 0;
-    for (unsigned int i = 0; i < len; i++)
+
+    for (unsigned int stride_num = 0; stride_num < STRIDE_LEN; ++stride_num)
     {
-        result += a[i] * b[i];
+        for (unsigned int i = stride_num; i < len; i += STRIDE_LEN)
+        {
+            result += a[i] * b[i];
+        }
     }
     return result;
 }
 void elementwise_multiply(NUMBER_TYPE const * a, NUMBER_TYPE const * b, NUMBER_TYPE * result, int len)
 {
-    for (unsigned int i = 0; i < len; ++i)
+    for (unsigned int stride_num = 0; stride_num < STRIDE_LEN; ++stride_num)
     {
-        result[i] = a[i] * b[i];
+        for (unsigned int i = stride_num; i < len; i += STRIDE_LEN)
+        {
+            result[i] = a[i] * b[i];
+        }
     }
 }
 
 NUMBER_TYPE stream(NUMBER_TYPE const * a, int len)
 {
     double y = 0.0;
-    for (unsigned int i = 0; i < len; i++)
+    for (unsigned int stride_num = 0; stride_num < STRIDE_LEN; ++stride_num)
     {
-        y += a[i];
+        for (unsigned int i = stride_num; i < len; i += STRIDE_LEN)
+        {
+            y += scalar_value*a[i];
+        }
     }
     return y;
 }
@@ -137,8 +150,8 @@ perf_t const * run_test(command_args_t const * runtime_options)
 #endif
 
 #ifdef ALIGN_ARRAYS
-    NUMBER_TYPE arr1[TESTSIZE] __attribute__((aligned(512)));
-    NUMBER_TYPE arr2[TESTSIZE] __attribute__((aligned(512)));
+    NUMBER_TYPE arr1[TESTSIZE] __attribute__((aligned(64)));
+    NUMBER_TYPE arr2[TESTSIZE] __attribute__((aligned(64)));
 #endif
 
     fill_in_array_with_random_numbers(arr1, sizeof(arr1)/sizeof(NUMBER_TYPE));
@@ -176,7 +189,7 @@ perf_t const * run_test(command_args_t const * runtime_options)
 #endif
 
 #ifdef ALIGN_ARRAYS
-        NUMBER_TYPE res[TESTSIZE] __attribute__((aligned(512)));
+        NUMBER_TYPE res[TESTSIZE] __attribute__((aligned(64)));
 #endif
 
         start_performace_measurement();

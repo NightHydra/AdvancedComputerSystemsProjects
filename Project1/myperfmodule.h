@@ -41,7 +41,7 @@ static perf_t const * end_performace_measurement()
     double false_elapsed_sec = (double)(end_perf_counter.QuadPart - start_perf_counter.QuadPart)/(false_freq_ave);
     double actual_freq = ((double) (endtimestamp-starttimestamp))/false_elapsed_sec;
 
-    double real_elapsed_time = (endtimestamp-starttimestamp)/actual_freq;
+    double real_elapsed_time = (endtimestamp-starttimestamp)/(actual_freq/1000000000.0);
 
     global_perf.elapsed_cycles = endtimestamp - starttimestamp;
     global_perf.elapsed_time = real_elapsed_time;
