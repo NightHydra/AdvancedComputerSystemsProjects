@@ -32,8 +32,6 @@ def get_xaxis_label_from_name(name: str):
 def fetch_data_from_file(options, metrics):
     file_to_read = "data_analysis/raw_data/{}_{}_{}_{}_{}/{}.csv".format(*options.values())
 
-    print (file_to_read)
-
     datacol = pd.read_csv(file_to_read, delimiter=",").astype(float)[metrics]
 
     return [datacol.median(), datacol.std()]
@@ -103,7 +101,6 @@ def plot_double_bar_graph(means, stds, prim_x : str, prim_y: str, second_x : str
 
     # Set the central positions of the primary category ticks on the X-axis
     ind = np.arange(n_prim_categories)
-    print (ind)
 
     # --- 2. Create Plot and Axes ---
     fig, ax = plt.subplots(figsize=(10, 6))

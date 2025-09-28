@@ -157,9 +157,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="A bunch of data generated from the tests">
+    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Added the Speedup graph for float32 vs float64.">
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/MultiplyNoVectorizeF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/ReduceNoVectorizeF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/StreamNoVectorizeF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/MultiplyVectorizedF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/ReduceVectorizedF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/StreamVectorizedF32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/MultiplyNoVectorizeF64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/ReduceNoVectorizeF64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/StreamNoVectorizeF64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/MultiplyVectorizedF64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/ReduceVectorizedF64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/StreamVectorizedF64.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_graphs_from_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_graphs_from_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_all_builds.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_all_builds.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,8 +281,11 @@
       <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1\SIMD_VerificationPictures\Float64_NoVectorize" />
+      <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1\SIMD_VerificationPictures\Float32_NoVectorize" />
+      <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1\SIMD_VerificationPictures\Float64_Vectorized" />
+      <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1\SIMD_VerificationPictures\Float32_Vectorized" />
       <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1" />
-      <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1\data_analysis" />
     </key>
     <key name="ImportExportFile.TargetDir.RECENT_KEYS">
       <recent name="$USER_HOME$/Downloads" />
@@ -1173,7 +1190,7 @@
       <workItem from="1758770233565" duration="23929000" />
       <workItem from="1759016278318" duration="10934000" />
       <workItem from="1759038356661" duration="3000" />
-      <workItem from="1759091643638" duration="4335000" />
+      <workItem from="1759091643638" duration="9332000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />
@@ -1199,11 +1216,22 @@
       <option name="project" value="LOCAL" />
       <updated>1759091724959</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added the Speedup graph for float32 vs float64.">
+      <option name="closed" value="true" />
+      <created>1759096426528</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759096426528</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.s" />
   </component>
   <component name="VCPKGProject">
     <isAutomaticCheckingOnLaunch value="false" />
@@ -1214,7 +1242,8 @@
     <MESSAGE value="A bunch of files edited for project 1 and 2" />
     <MESSAGE value="Have a bunch of changes for creating the graphs" />
     <MESSAGE value="A bunch of data generated from the tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="A bunch of data generated from the tests" />
+    <MESSAGE value="Added the Speedup graph for float32 vs float64." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the Speedup graph for float32 vs float64." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

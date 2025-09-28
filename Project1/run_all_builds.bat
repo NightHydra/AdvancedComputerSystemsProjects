@@ -26,4 +26,3 @@ for %%v in (%vectorize_options%) do (
         )
     )
 )
-
