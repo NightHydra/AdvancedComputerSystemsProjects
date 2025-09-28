@@ -3,7 +3,7 @@ project(ACS_Project1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-set(VECTORIZATION_OPTIONS "VECTORIZE" "NO_VECTORIZE" "AVX")
+set(VECTORIZATION_OPTIONS "VECTORIZE" "NO_VECTORIZE")
 set(FLOAT_OPTIONS "double" "float")
 
 # 48 KB,
@@ -42,7 +42,7 @@ foreach(VECTORIZATION_TYPE IN LISTS VECTORIZATION_OPTIONS)
 
                     if(VECTORIZATION_TYPE STREQUAL "NO_VECTORIZE")
                         target_compile_options( ${TARGET_NAME} PRIVATE -fno-tree-vectorize)
-                    elseif(VECTORIZATION_TYPE STREQUAL "AVX")
+                    elseif(VECTORIZATION_TYPE STREQUAL "VECTORIZE")
                         target_compile_options(${TARGET_NAME} PRIVATE -march=native -ftree-vectorize)
                     endif()
 

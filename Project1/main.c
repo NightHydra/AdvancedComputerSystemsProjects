@@ -60,12 +60,12 @@ int main(int argc, char * argv[])
     {
         perfrun = *run_test(&runtime_options);
     }
-    printf("Cycles,Time,CPU Frequency,GFLOPS\n");
+    printf("Cycles,Time,CPU Frequency,GFLOPS, CPE\n");
     for (unsigned int i = 0; i<NUM_ITERATIONS_TO_RUN; ++i)
     {
         perfrun = *run_test(&runtime_options);
-        printf("%lf, %.10lf, %lf, %lf\n", (double) perfrun.elapsed_cycles,
-            perfrun.elapsed_time, perfrun.measured_freq, TESTSIZE / perfrun.elapsed_time);
+        printf("%lf, %.10lf, %lf, %lf, %.10lf\n", (double) perfrun.elapsed_cycles,
+            perfrun.elapsed_time, perfrun.measured_freq, TESTSIZE / perfrun.elapsed_time, ((double)perfrun.elapsed_cycles)/TESTSIZE);
     }
 
 
