@@ -157,14 +157,401 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
+    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Have a bunch of changes for creating the graphs">
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/BaselineVsVectorizedMULTIPLY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/BaselineVsVectorizedREDUCE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/BaselineVsVectorizedSTREAM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/LocalitySweepCPE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/LocalitySweepGFLOPS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/Part3Graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/plots/Part4Plot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_DRAM_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L1_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_L2_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_double_LLC_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_DRAM_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L1_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_L2_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/NO_VECTORIZE_float_LLC_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_DRAM_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L1_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_L2_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_double_LLC_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_DRAM_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L1_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_L2_8_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_1_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_2_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_4_NO_ALIGN/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_ALIGN_ARRAYS/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_ALIGN_ARRAYS/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_ALIGN_ARRAYS/STREAM.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_NO_ALIGN/MULTIPLY.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_NO_ALIGN/REDUCE.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_analysis/raw_data/VECTORIZE_float_LLC_8_NO_ALIGN/STREAM.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_graphs_from_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_graphs_from_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,42 +618,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "CMake Application.MultiplyBuild.executor": "Run",
-    "CMake Application.MultiplyVectorizedBuild.executor": "Debug",
-    "CMake Application.ReduceBuild.executor": "Run",
-    "CMake Application.StreamVectorized.executor": "Run",
-    "CMake Application.sample_build.executor": "Run",
-    "CMake Application.untitled.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.generate_graphs_from_data.executor": "Run",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.west.config.association.type.startup.service": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SHELLCHECK.PATH": "C:\\Users\\Alek\\AppData\\Roaming\\JetBrains\\CLion2025.1\\plugins\\Shell Script\\shellcheck.exe",
-    "Shell Script.CollectData.executor": "Run",
-    "Shell Script.CollectDataFromAllBuilds.executor": "Run",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Alek/Documents/AdvancedComputerSystemsProjects/Project1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.mocha.mocha_node_package_dir": "",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.MultiplyBuild.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.MultiplyVectorizedBuild.executor&quot;: &quot;Debug&quot;,
+    &quot;CMake Application.ReduceBuild.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.StreamVectorized.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.sample_build.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.untitled.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.generate_graphs_from_data.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\Alek\\AppData\\Roaming\\JetBrains\\CLion2025.1\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;Shell Script.CollectData.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.CollectDataFromAllBuilds.executor&quot;: &quot;Run&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alek/Documents/AdvancedComputerSystemsProjects/Project1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alek\Documents\AdvancedComputerSystemsProjects\Project1" />
@@ -280,7 +667,7 @@
       <recent name="$USER_HOME$/OneDrive - Rensselaer Polytechnic Institute/Documents/Coursework/ECSE-Coursework/ComputerHardwareDesign/Labs/lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.CollectDataFromAllBuilds">
+  <component name="RunManager" selected="Python.generate_graphs_from_data">
     <configuration name="MultiplyBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -1022,11 +1409,7 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.MultiplyBuild" />
-      <item itemvalue="CMake Application.ReduceBuild" />
       <item itemvalue="CMake Application.MultiplyVectorizedBuild" />
-      <item itemvalue="CMake Application.ReduceVectorized" />
-      <item itemvalue="CMake Application.StreamBuild" />
-      <item itemvalue="CMake Application.StreamVectorized" />
       <item itemvalue="CMake Application.NO_VECTORIZE_double_DRAM_1_ALIGN_ARRAYS" />
       <item itemvalue="CMake Application.NO_VECTORIZE_double_DRAM_1_NO_ALIGN" />
       <item itemvalue="CMake Application.NO_VECTORIZE_double_DRAM_2_ALIGN_ARRAYS" />
@@ -1091,6 +1474,10 @@
       <item itemvalue="CMake Application.NO_VECTORIZE_float_LLC_4_NO_ALIGN" />
       <item itemvalue="CMake Application.NO_VECTORIZE_float_LLC_8_ALIGN_ARRAYS" />
       <item itemvalue="CMake Application.NO_VECTORIZE_float_LLC_8_NO_ALIGN" />
+      <item itemvalue="CMake Application.ReduceBuild" />
+      <item itemvalue="CMake Application.ReduceVectorized" />
+      <item itemvalue="CMake Application.StreamBuild" />
+      <item itemvalue="CMake Application.StreamVectorized" />
       <item itemvalue="CMake Application.VECTORIZE_double_DRAM_1_ALIGN_ARRAYS" />
       <item itemvalue="CMake Application.VECTORIZE_double_DRAM_1_NO_ALIGN" />
       <item itemvalue="CMake Application.VECTORIZE_double_DRAM_2_ALIGN_ARRAYS" />
@@ -1176,7 +1563,8 @@
       <workItem from="1758233028568" duration="15000" />
       <workItem from="1758569116618" duration="5101000" />
       <workItem from="1758770233565" duration="23929000" />
-      <workItem from="1759016278318" duration="3411000" />
+      <workItem from="1759016278318" duration="10934000" />
+      <workItem from="1759038356661" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />
@@ -1186,7 +1574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758949652060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Have a bunch of changes for creating the graphs">
+      <option name="closed" value="true" />
+      <created>1759019877033</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759019877033</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1199,7 +1595,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="A bunch of files edited for project 1 and 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="A bunch of files edited for project 1 and 2" />
+    <MESSAGE value="Have a bunch of changes for creating the graphs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Have a bunch of changes for creating the graphs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
