@@ -16,7 +16,7 @@ align_options = ["NO_ALIGN", "ALIGN_ARRAYS"]
 kernel_options = ["STREAM", "REDUCE", "MULTIPLY"]
 
 option_names = {"vec" : vec_options, "float" : float_options, "mem" : memory_level_options,
-                "stride" : stride_len, "align" : align_options}
+                "stride" : stride_len, "align" : align_options, "kern" : kernel_options}
 
 option_axis_names = {"vec" : "Vectorization Options", "float" : "Floating point type bitwidth",
                      "mem" : "Memory Level", "stride": "Stride Length", "align" : "Alignment Option"}
@@ -39,7 +39,8 @@ def fetch_data_from_file(options, metrics):
     return [datacol.median(), datacol.std()]
 
 
-def read_data_for_plot(primary_x, primary_y, secondary_x, default_overrides : dict[str, str] = None):
+def read_data_for_plot(primary_x : str, primary_y : str, secondary_x : str,
+                       default_overrides : dict[str, str] = None):
 
     primx_list = get_option_list_from_name(primary_x)
     secondx_list = get_option_list_from_name(secondary_x)
@@ -155,6 +156,71 @@ def plot_double_bar_graph(means, stds, prim_x : str, prim_y: str, second_x : str
     # Display the plot
     plt.savefig(PLOT_FILES_PATH+savename)
 
+def plot_line_graph(means, stds, x_cat: str, perf_metric: str, plottitle: str, savename: str):
+    """
+    Plots a line graph with error bars for the given means and stds.
+
+    Parameters:
+        means (list or np.ndarray): Mean values for each category.
+        stds (list or np.ndarray): Standard deviations corresponding to each mean.
+        x_cats (list of str): Categories for the x-axis.
+        perf_metric (str): Label for the y-axis (performance metric).
+        plottitle (str): Title of the plot.
+        savename (str): File name to save the plot (e.g., 'plot.png').
+    """
+    x = np.arange(len(means))  # numeric positions for x-axis
+
+    plt.figure(figsize=(8, 5))
+    plt.errorbar(x, means, yerr=stds, fmt='-o', capsize=5, label=perf_metric)
+
+    plt.xticks(x, get_option_list_from_name(x_cat), rotation=45)
+    plt.xlabel(get_xaxis_label_from_name(x_cat))
+    plt.ylabel(perf_metric)
+    plt.title(plottitle)
+    plt.legend()
+    plt.tight_layout()
+
+    plt.savefig(savename, dpi=300)
+    plt.close()
+
+def plot_double_line_graph(means : list[list[float]], x_cat: str, x_cat2 : str, perf_metric: str, plottitle: str, savename: str):
+    """
+    Plots multiple lines with error bars from 2D arrays of means and stds.
+
+    Parameters:
+        means (float): 2D array (n_lines, n_points) of mean values.
+        x_cat (str): Category for the x-axis.
+        x_cat2 (str): Subcategories
+        perf_metric (str): Label for the y-axis.
+        plottitle (str): Title of the plot.
+        savename (str): File name to save the plot.
+    """
+    n_lines, n_points = [len(means), len(means[0])]
+    x = np.arange(n_points)
+
+    plt.figure(figsize=(8, 5))
+
+    for i in range(n_lines):
+        plt.errorbar(
+            x,
+            means[i],
+            fmt='-o',
+            capsize=5,
+            label=get_option_list_from_name(x_cat2)[i]
+        )
+
+    plt.xticks(x, get_option_list_from_name(x_cat), rotation=45)
+    plt.xlabel(get_xaxis_label_from_name(x_cat))
+    plt.ylabel(perf_metric)
+    plt.title(plottitle)
+    plt.legend()
+    plt.tight_layout()
+
+    plt.savefig(PLOT_FILES_PATH+savename, dpi=300)
+    plt.close()
+
+
+
 def fetch_data_and_generate_plot(primary_x, primary_y, secondary_x,
                                  plot_title, savename, default_overrides : dict[str, str] = None):
 
@@ -172,6 +238,19 @@ def main():
                                     part1_gflop_title.format(kern), part1_gflop_savename.format(kern),
                                      {"kernel" : kern})
 
+    speedup_plot_title = "Scalar vs Baseline Speedup for all kernels"
+    speedup_plot_savename = "Part1SpeedUp"
+
+    speedup_by_kerntype_arr = []
+    for kern in kernel_options:
+        means, _ = read_data_for_plot("mem", "GFLOPS", "vec",
+                                      {"kernel" : kern})
+        speedup_means = list(map(lambda x: x[1] / x[0], zip(means[0], means[1])))
+        speedup_by_kerntype_arr.append(speedup_means)
+
+    plot_double_line_graph(speedup_by_kerntype_arr, "mem", "kern",
+                           "Vectorized vs Non Vectorized Speedup",
+                           speedup_plot_title, speedup_plot_savename)
 
     ## PART 2 PLOTS
     part2_gflop_title = "Locality Sweep Peformance in GFLOPS"
@@ -204,11 +283,27 @@ def main():
 
     ## PART 5 PLOTS
 
+    part5_title = "Float vs Double effects on SIMD for GFLOPS"
+    part5_savename = "Part5Plot"
 
+    fetch_data_and_generate_plot("float", "GFLOPS", "vec",
+                                 part5_title, part5_savename)
 
+    #### FLOATING POINT SPEEDUP PLOT
 
+    speedup_plot_title = "Float32 vs Float64 Speedup for all kernels"
+    speedup_plot_savename = "Float32Float64SpeedUp"
 
+    speedup_by_kerntype_arr = []
+    for ftype in float_options:
+        means, _ = read_data_for_plot("mem", "GFLOPS", "vec",
+                                  {"float" : ftype})
+        speedup_means = list(map(lambda x: x[1] / x[0], zip(means[0], means[1])))
+        speedup_by_kerntype_arr.append(speedup_means)
 
+    plot_double_line_graph(speedup_by_kerntype_arr, "mem", "float",
+                           "SIMD Speedup Float32 vs Float64",
+                           speedup_plot_title, speedup_plot_savename)
 
 main()
 
