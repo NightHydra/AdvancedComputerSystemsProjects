@@ -69,3 +69,93 @@ speedup is far greater than for tests with larger arithmetic intensity.
 This is most likely due to the fact that as arithmetic instensity gets larger
 the memory access latency time dominates the difference in
 lane width.
+
+## Vectorization verification
+
+This section of the report has pictures showing the assembly code
+that uses just scalar operations vs asssembly code that uses
+SIMD instructions.  The first image of every set will contain the
+non-vectorized code while the second will contain the vectorized code.
+Following that, the instructions used by the vectorized code
+will be listed.
+
+### Float32 Multiplication
+
+![F32MultNoVect](SIMD_VerificationPictures/Float32_NoVectorize/MultiplyNoVectorizeF32.png)
+
+![F32MultVect](SIMD_VerificationPictures/Float32_Vectorized/MultiplyVectorizedF32.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vmovups
+2. vmulps
+
+### Float32 Reduction
+
+![F32ReduceNoVect](SIMD_VerificationPictures/Float32_NoVectorize/ReduceNoVectorizeF32.png)
+![F32ReduceVect](SIMD_VerificationPictures/Float32_Vectorized/ReduceVectorizedF32.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vmovups
+2. vmulps
+3. vaddss
+4. vshufps
+5. vunpckhps
+6. vextractf
+7. valignd
+
+### Float32 Streaming
+
+![F32StreamNoVect](SIMD_VerificationPictures/Float32_NoVectorize/StreamNoVectorizeF32.png)
+![F32StreamVect](SIMD_VerificationPictures/Float32_Vectorized/StreamVectorizedF32.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vcvrss2sd
+2. vfmadd231sd
+
+### Float64 Multiplication
+
+![F64MultNoVect](SIMD_VerificationPictures/Float64_NoVectorize/MultiplyNoVectorizeF64.png)
+
+![F64MultVect](SIMD_VerificationPictures/Float64_Vectorized/MultiplyVectorizedF64.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vmovupd
+2. vmulpd
+
+### Float64 Reduction
+
+![F64ReduceNoVect](SIMD_VerificationPictures/Float64_NoVectorize/ReduceNoVectorizeF64.png)
+![F64ReduceVect](SIMD_VerificationPictures/Float64_Vectorized/ReduceVectorizedF64.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vmovupd
+2. vmulpd
+3. vaddsd
+4. vunpckhpd
+5. valignq
+6. vextractf
+
+### Float64 Streaming
+
+![F64StreamNoVect](SIMD_VerificationPictures/Float64_NoVectorize/StreamNoVectorizeF64.png)
+![F64StreamVect](SIMD_VerificationPictures/Float64_Vectorized/StreamVectorizedF64.png)
+
+The vectorized code uses the following vectorized instructions as shown above.
+
+1. vmulpd
+2. vaddsd
+3. vunpckhpd
+4. vextractf64x2
+5. valignq
+
+Below is a table that outlines all the vectorized instructions
+used and which vectorized kernels use them.
+
+| Instruction | F32 Mult. | F32 Reduce | F32 Stream | F64 Mult. | F64 Reduce | F64 Stream|
+|-------------|-----------|------------|------------|-----------|------------|-----------|
+ |
