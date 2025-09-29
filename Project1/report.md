@@ -156,6 +156,21 @@ The vectorized code uses the following vectorized instructions as shown above.
 Below is a table that outlines all the vectorized instructions
 used and which vectorized kernels use them.
 
-| Instruction | F32 Mult. | F32 Reduce | F32 Stream | F64 Mult. | F64 Reduce | F64 Stream|
-|-------------|-----------|------------|------------|-----------|------------|-----------|
- |
+| Instruction    | F32 Mult. | F32 Reduce | F32 Stream | F64 Mult. | F64 Reduce | F64 Stream |
+|----------------|-----------|------------|------------|-----------|------------|------------|
+ | vmovups        | x         | x          |            |           |            |            |
+ | vmulps         | x         | x          |            |           |            |            |
+ | vaddss         |           | x          |            |           |            |            |
+ | vshufps        |           | x          |            |           |            |            |
+ | vunpckhps      |           | x          |            |           |            |            |
+ | vextractf      |           | x          |            |           | x          |            |
+ | valignd        |           | x          |            |           |            |            |
+  | vcvrss2sd      |           |            | x          |           |            |            | 
+ | vfmadd231sd    |           |            | x          |           |            |            |
+ | vmovupd        |           |            |            | x         | x          |            |
+ | vmulpd         |           |            |            | x         | x          | x          |
+ | vaddsd         |           |            |            |           | x          | x          |
+ | vunpckhpd      |           |            |            |           | x          | x          |
+ | valignq        |           |            |            |           | x          | x          |
+| vextractf64x2  |           |            |            |           |            | x          |
+
