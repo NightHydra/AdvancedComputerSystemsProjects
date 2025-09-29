@@ -154,7 +154,9 @@ The vectorized code uses the following vectorized instructions as shown above.
 5. valignq
 
 Below is a table that outlines all the vectorized instructions
-used and which vectorized kernels use them.
+used and which vectorized kernels use them.  One interesting note is that the double floating
+type does not use an FMA SIMD instruction which may cause decreased speedup when switching
+from single floating point to double floating point.
 
 | Instruction    | F32 Mult. | F32 Reduce | F32 Stream | F64 Mult. | F64 Reduce | F64 Stream |
 |----------------|-----------|------------|------------|-----------|------------|------------|
