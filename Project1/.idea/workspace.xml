@@ -157,23 +157,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Added the Speedup graph for float32 vs float64.">
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/MultiplyNoVectorizeF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/ReduceNoVectorizeF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_NoVectorize/StreamNoVectorizeF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/MultiplyVectorizedF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/ReduceVectorizedF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float32_Vectorized/StreamVectorizedF32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/MultiplyNoVectorizeF64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/ReduceNoVectorizeF64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_NoVectorize/StreamNoVectorizeF64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/MultiplyVectorizedF64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/ReduceVectorizedF64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SIMD_VerificationPictures/Float64_Vectorized/StreamVectorizedF64.png" afterDir="false" />
+    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Another sentence added to the report outlining how F64 stream inst as good as F32 stram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_graphs_from_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_graphs_from_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_all_builds.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_all_builds.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/collect_data2.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/collect_data2.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1190,7 +1177,8 @@
       <workItem from="1758770233565" duration="23929000" />
       <workItem from="1759016278318" duration="10934000" />
       <workItem from="1759038356661" duration="3000" />
-      <workItem from="1759091643638" duration="9332000" />
+      <workItem from="1759091643638" duration="12367000" />
+      <workItem from="1759120543872" duration="704000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />
@@ -1224,7 +1212,39 @@
       <option name="project" value="LOCAL" />
       <updated>1759096426528</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Wrote a good bit of the report markdown">
+      <option name="closed" value="true" />
+      <created>1759101602064</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759101602064</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Report updated to include vectorization proof">
+      <option name="closed" value="true" />
+      <created>1759118673523</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1759118673523</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added table to report of vectorized instruction list">
+      <option name="closed" value="true" />
+      <created>1759119783837</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1759119783837</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Another sentence added to the report outlining how F64 stream inst as good as F32 stram">
+      <option name="closed" value="true" />
+      <created>1759120078750</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759120078750</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1238,12 +1258,27 @@
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="A bunch of files edited for project 1 and 2" />
     <MESSAGE value="Have a bunch of changes for creating the graphs" />
     <MESSAGE value="A bunch of data generated from the tests" />
     <MESSAGE value="Added the Speedup graph for float32 vs float64." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Speedup graph for float32 vs float64." />
+    <MESSAGE value="Wrote a good bit of the report markdown" />
+    <MESSAGE value="Report updated to include vectorization proof" />
+    <MESSAGE value="Added table to report of vectorized instruction list" />
+    <MESSAGE value="Another sentence added to the report outlining how F64 stream inst as good as F32 stram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Another sentence added to the report outlining how F64 stream inst as good as F32 stram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

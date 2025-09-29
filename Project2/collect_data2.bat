@@ -39,8 +39,8 @@ echo ====== Collecting Data for zero-queue-baselines ====== > %LOGFILE%
 echo ========== Collecting Data for Differing R/W sweeps ============= >> %LOGFILE%
 
 echo -- 1:1 Read/Write Experiment -- >> %LOGFILE%
-mlc --loaded_latency -W2 >> %LOGFILE%
+mlc --idle_latency -W2 >> %LOGFILE%
 echo -- 2:1 Read/Write Experiment -- >> %LOGFILE%
-mlc --loaded_latency -W2 >> %LOGFILE%
+mlc --idle_latency -W2 >> %LOGFILE%
 echo -- 3:1 Read/Write Experiment -- >> %LOGFILE%
-mlc --loaded_latency -W3 >> %LOGFILE%
+mlc --idle_latency -W3 >> %LOGFILE%

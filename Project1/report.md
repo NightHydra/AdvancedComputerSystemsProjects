@@ -1,6 +1,44 @@
 # Project 1 Report
 ## Alek Krupka
 
+## Introduction
+
+This report outlines the data collected for project 1 of RPI's Advanced Computer Systems
+course.  This project develops code for testing performance under a variety of conditions such
+as when using 32-bit floats vs 64-bit floats and the effects of autovectorization during
+compilation.
+
+## Methodologies
+
+### How the code was Written
+
+For writing the kernels the C programming language was used as it is closest to the hardware
+ and will provide the closest estimates for low long many operations take.
+
+In order to keep the code as efficient as possible this solution uses preprocessor directives
+to alter the code for the various test conditions.  This is done to ensure that
+performance differences are mainly caused by what we are testing rather than
+branch statements that need check a bunch of if statements.  In order to make
+it so we don't need ot compile the code manually 200+ times I set up a CMAKE script
+to automatically enable building all configurations of the test software.
+A .bat file then runs every possible configuration to produce a wide variety
+of data that is then used by ```generate_graphs_from_data.py```.
+
+### Control Group
+
+Since it would be overbeating to attempt plotting every possible configuration of 
+experimental knobs this section will define a "control group".  Assume that
+all experiments are done with these "control parameters" listed below unless otherwise specified.
+
+| Control Parameter    | What it is set to | Why I chose this parameter |
+|----------------------|-------------------| -------------------------- |
+ | Vectorization        | No Vectorization  | This is a baseline | 
+ | Floating Point Width | 64-bit            | I am testing using a 64-bit PC |
+ | Memory Locality      | L1                | This is the fastest option and ignores any latency due to memory |
+  | Stride Length        | 1                 | This is a good baseline |
+ | Alignment | Aligned | This is a good default to prevent slowdown due to just misalignment |
+ | kernel | Elementwise Multiply | This kernel shows the most variation under different experimental groups |
+
 ## 1. Baseline vs Auto-Vectorized Outputs
 
 The plots below show the achieved GFLOP/s for each of the selected kernels
