@@ -1,8 +1,0 @@
---- Starting MLC Experiments for Project #2 --- 
-Start Time: Wed 09/24/2025 23:45:28.31 
-CPU/OS Setup: Ensure High Performance Power Plan is active. 
-MLC Version (Attempting to find help/version info - check your install): 
- 
- 
-### ZERO-QUEUE LATENCY BASELINES (Repetitions: 3    :: Number of times to run each test, as required ( [cite: 54, 186], Warmup: 2         :: Number of warmup iterations for latency tests () ### 
-Running L1/L2/L3/DRAM Latency Sweep... 
