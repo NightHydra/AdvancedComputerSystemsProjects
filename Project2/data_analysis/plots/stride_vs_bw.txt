@@ -1,0 +1,4 @@
+| |64 bit stride|256 bit stride|1024 bit stride|
+|---|---|---|---|
+|Sequential| 39852.96| 23376.48| 18405.37|
+|Random Access| 23108.58| 20216.43| 19545.68|

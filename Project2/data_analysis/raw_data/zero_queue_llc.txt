@@ -1,0 +1,60 @@
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 66.1 base frequency clocks (	26.5	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 46.1 base frequency clocks (	18.5	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 66.1 base frequency clocks (	26.5	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 60.8 base frequency clocks (	24.4	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 87.7 base frequency clocks (	35.1	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 71.4 base frequency clocks (	28.6	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 40.6 base frequency clocks (	16.3	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 44.5 base frequency clocks (	17.8	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 40.3 base frequency clocks (	16.1	ns)
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --idle_latency -b16000 
+
+Using buffer size of 15.625MiB
+Each iteration took 41.7 base frequency clocks (	16.7	ns)
+

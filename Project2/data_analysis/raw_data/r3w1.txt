@@ -1,0 +1,110 @@
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	660.04	  29583.0
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	575.55	  32442.0
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	730.94	  30224.4
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	649.11	  30371.4
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	606.72	  31488.1
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	618.73	  31549.0
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	632.43	  30897.2
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	589.69	  31625.3
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	761.39	  30622.2
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --loaded_latency -W3 -d0 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	860.66	  28803.2
