@@ -1,0 +1,6 @@
+| |4Ki Random Reads|4Ki Random Writes|128Ki Sequential Reads|128Ki Sequential Writes|
+|---|---|---|---|---|
+|Average Latency(us)|114.39|41.06|128.92|53.12|
+|Latency variance(us)|185.79|78.84|142.50|78.58|
+|95th Percentile Latency(us)|248.83|109.06|246.78|132.10|
+|99th Percentile Latency(us)|321.54|189.44|321.54|218.11|
