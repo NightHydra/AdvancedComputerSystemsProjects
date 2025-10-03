@@ -1,0 +1,24 @@
+[global]
+
+directory=E\:fio_tests
+filename=FileToWriteTo.txt
+filesize=1m
+ioengine=windowsaio
+iodepth=1
+runtime=60
+time_based
+direct=1
+numjobs=1
+thread=1
+percentile_list=50:95:99:99.9
+
+
+stonewall
+
+[Zero Queue 4kb]
+size=4kb
+rw=randrw
+
+[Zero Queue 128 Seq]
+size=128k
+rw=rw

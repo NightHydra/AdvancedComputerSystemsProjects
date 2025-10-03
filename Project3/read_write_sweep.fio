@@ -1,0 +1,30 @@
+[global]
+
+directory=E\:fio_tests
+filename=FileToWriteTo.txt
+filesize=1m
+ioengine=windowsaio
+iodepth=1
+runtime=60
+time_based
+direct=1
+numjobs=1
+thread=1
+per_job_logs=1
+size=64kb
+percentile_list=50:95:99:99.9
+stonewall
+
+[100 R]
+rw=randread
+
+[100 W]
+rw=randwrite
+
+[70R 30W]
+rw=randrw
+rwmixread=70
+
+[50R 50W]
+rw=randrw
+rwmixread=50
