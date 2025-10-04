@@ -1,0 +1,8 @@
+| |50th Percentile|95th Percentile|99th Percentile|99.9th Percentile|
+|---|---|---|---|---|
+|Queue Depth = 1|17.54|20.35|68.10|132.10|
+|Queue Depth = 2|16.77|22.91|62.21|138.24|
+|Queue Depth = 4|18.30|40.70|67.07|132.10|
+|Queue Depth = 8|37.63|76.29|98.82|183.30|
+|Queue Depth = 16|77.31|150.53|187.39|419.84|
+|Queue Depth = 32|164.86|313.34|374.78|593.92|
