@@ -214,3 +214,38 @@ from single floating point to double floating point.
  | valignq        |           |            |            |           | x          | x          |
 | vextractf64x2  |           |            |            |           |            | x          |
 
+
+## Roofline Analysis
+
+To perform a roofline analysis we must take the floating point
+operations per second multipled by the amount of data being used for
+those floating point operations.  So it would be calculated as follows,
+
+Roofline = GFLOPS * ArithmeticIntensity
+
+To achieve the arithmetic intensity we can look at the data to see that
+for L1 cache in the vectorized version we perform 2048 floating point operations
+while the operation is being done on 2048*8 bytes for double floating point
+numbers implying the arithmetic intensity is 1/8.
+
+Now we will use the measured memory bandwidth from part 2 to find the max
+memory bandwidth of the L1 cache on the machine tested on.  Looking at project 2
+the peak memory bandwidth appears to be about 40 GB/s for L1 cache.
+  As a result, we can say that the roofline analysis generates a roofline of about
+5GFLOPS/s for 64-bit doubles.  
+
+If we switch however to 32-bit floats and using L1
+cache we can then say our arithmetic intensity is approximately 1/4 multiplying by the 
+bandwidth of 40GB/s to get a roofline of around 10GFLOPS.  This is what
+is shown by the plots.
+
+Another conclusion we can generate from this result is that the roofline
+performance is most likley memory bound since when transitioning to a lower arithmetic
+intensity the performance doubled.
+
+However, for non-vectorized versions of the code the GFLOPS/s is less than
+the roofline performance meaning when vectorization is not enabled that the 
+computer is CPU bound rather than memory bound.
+
+
+

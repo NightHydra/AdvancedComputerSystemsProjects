@@ -159,8 +159,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Added some into stuff to project 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project2/collect_data2.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/collect_data2.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project2/mlc_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/mlc_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1180,6 +1179,7 @@
       <workItem from="1759091643638" duration="12367000" />
       <workItem from="1759120543872" duration="2677000" />
       <workItem from="1759182083137" duration="27000" />
+      <workItem from="1759543799518" duration="1590000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />
