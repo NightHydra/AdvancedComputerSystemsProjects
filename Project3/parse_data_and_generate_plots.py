@@ -65,11 +65,11 @@ def main():
 
     # 100% Read Data
     read_lat = [extracted_data["100 R"]["read"]["lat_mean"], extracted_data["100 R"]["read"]["lat_var"]]
-    read_bw = [extracted_data["100 R"]["read"]["lat_mean"], extracted_data["100 R"]["read"]["lat_var"]]
+    read_bw = [extracted_data["100 R"]["read"]["bw_mean"], extracted_data["100 R"]["read"]["bw_var"]]
 
     # 100% Write Data
     write_lat = [extracted_data["100 W"]["write"]["lat_mean"], extracted_data["100 W"]["write"]["lat_var"]]
-    write_bw = [extracted_data["100 W"]["write"]["lat_mean"], extracted_data["100 W"]["write"]["lat_var"]]
+    write_bw = [extracted_data["100 W"]["write"]["bw_mean"], extracted_data["100 W"]["write"]["bw_var"]]
 
     # 70/30 Read Write Ratio
     read_write_70_30_lat_read = [extracted_data["70R 30W"]["read"]["lat_mean"], extracted_data["70R 30W"]["read"]["lat_var"]]
@@ -78,9 +78,9 @@ def main():
     read_write_70_30_bw_write = [extracted_data["70R 30W"]["write"]["bw_mean"], extracted_data["70R 30W"]["write"]["bw_var"]]
 
     # Now take the combined mean and variances
-    read_write_70_30_lat = [read_write_70_30_lat_read[0]*.7 + 0.7*read_write_70_30_lat_write[0],
+    read_write_70_30_lat = [read_write_70_30_lat_read[0]*.7 + 0.3*read_write_70_30_lat_write[0],
                             dr.get_weighted_var(70/30, read_write_70_30_lat_read[1], read_write_70_30_lat_write[1])]
-    read_write_70_30_bw = [read_write_70_30_bw_read[0]*0.7 + 0.7*read_write_70_30_bw_write[0],
+    read_write_70_30_bw = [read_write_70_30_bw_read[0]*0.7 + 0.3*read_write_70_30_bw_write[0],
                             dr.get_weighted_var(70/30, read_write_70_30_bw_read[1],read_write_70_30_bw_write[1])]
 
     # 50/50 Read Write Ratio
