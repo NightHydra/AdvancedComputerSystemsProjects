@@ -157,9 +157,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Added some into stuff to project 1">
+    <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Minor Edits">
+      <change afterPath="$PROJECT_DIR$/../Project2/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project2/cache_tester.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project2/collect_vtune_data.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project2/vtune.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Project2/vtune_data_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/.idea/Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/.idea/Project2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1179,7 +1184,9 @@
       <workItem from="1759091643638" duration="12367000" />
       <workItem from="1759120543872" duration="2677000" />
       <workItem from="1759182083137" duration="27000" />
-      <workItem from="1759543799518" duration="1590000" />
+      <workItem from="1759543799518" duration="1822000" />
+      <workItem from="1759550658530" duration="11000" />
+      <workItem from="1760033065841" duration="1577000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />
@@ -1253,7 +1260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759121479641</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Minor Edits">
+      <option name="closed" value="true" />
+      <created>1759545485698</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759545485698</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1288,7 +1303,8 @@
     <MESSAGE value="Added table to report of vectorized instruction list" />
     <MESSAGE value="Another sentence added to the report outlining how F64 stream inst as good as F32 stram" />
     <MESSAGE value="Added some into stuff to project 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some into stuff to project 1" />
+    <MESSAGE value="Minor Edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
