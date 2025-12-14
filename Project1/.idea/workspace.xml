@@ -158,13 +158,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a8c3849-7837-4fdc-9f65-a768e852b2b5" name="Changes" comment="Minor Edits">
-      <change afterPath="$PROJECT_DIR$/../Project2/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Project2/cache_tester.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Project2/collect_vtune_data.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Project2/vtune.lnk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Project2/vtune_data_analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SecondRoundProjects/ConcurrentDataStuctures/run_tests.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project2/.idea/Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/.idea/Project2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +278,7 @@
       <recent name="$USER_HOME$/OneDrive - Rensselaer Polytechnic Institute/Documents/Coursework/ECSE-Coursework/ComputerHardwareDesign/Labs/lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_graphs_from_data">
+  <component name="RunManager" selected="Shell Script.CollectDataFromAllBuilds">
     <configuration name="MultiplyBuild" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-kernel MULTIPLY" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ACS_Project1" TARGET_NAME="NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS" CONFIG_NAME="Release-MinGW" RUN_TARGET_PROJECT_NAME="ACS_Project1" RUN_TARGET_NAME="NO_VECTORIZE_double_L1_1_ALIGN_ARRAYS">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -1187,6 +1182,8 @@
       <workItem from="1759543799518" duration="1822000" />
       <workItem from="1759550658530" duration="11000" />
       <workItem from="1760033065841" duration="1577000" />
+      <workItem from="1765689335791" duration="21000" />
+      <workItem from="1765692935464" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="A bunch of files edited for project 1 and 2">
       <option name="closed" value="true" />

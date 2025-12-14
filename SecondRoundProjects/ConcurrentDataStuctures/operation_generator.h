@@ -61,7 +61,7 @@ private:
 // Function Definitions
 template<class KeyT, class ValT>
 OperationGenerator<KeyT, ValT>::OperationGenerator(int prefilled_keys_len, KeyT const * const initial_keys) :
-    gen(rd()), key_generator(0, 100000), value_generator(0, std::numeric_limits<int>::max()),
+    gen(rd()), key_generator(0, std::numeric_limits<int>::max()), value_generator(0, std::numeric_limits<int>::max()),
     index_selection_generator(0, 0), valid_find_generator(SUCCESSFUL_FIND_RATE)
 {
    prefilled_keys = initial_keys;
