@@ -1,6 +1,7 @@
 //
 // Created by Alek on 11/16/2025.
 //
+#include <iostream>
 
 #ifndef CONCURRENT_HASH_TABLE_H
 #define CONCURRENT_HASH_TABLE_H
@@ -37,7 +38,7 @@ struct hash_table_kv_pair_head_t
     hash_table_kv_pair_t<KeyT, ValT> kv_pair;
     bool valid;
 #ifdef FINE_GRAINED
-    std::shared_mutex mutex;
+    std::shared_mutex * mutex;
 #endif
 };
 
@@ -80,7 +81,7 @@ private:
      */
     unsigned int hashseed;
 
-    void double_size();
+    void double_size(unsigned long long target);
 };
 
 
@@ -100,10 +101,12 @@ ConcurrentHashTable<KeyT, ValT>::ConcurrentHashTable(unsigned long long starting
     for (unsigned long long i = 0; i<table_size; ++i)
     {
         table[i].valid = false;
+#ifdef FINE_GRAINED
+        table[i].mutex = new std::shared_mutex;
+#endif
     }
     hashseed = std::time(nullptr);
 }
-
 
 
 
@@ -113,22 +116,30 @@ bool ConcurrentHashTable<KeyT, ValT>::insert(KeyT key, ValT value)
 
     bool already_exists = false;
 
+    unsigned long long curr_table_size = table_size;
     // Check if we need to resize
-    if (num_elements+1 >= table_size*RESIZE_RATE)
+    if (num_elements+1 >= curr_table_size*RESIZE_RATE)
     {
-        double_size();
+        double_size(curr_table_size<<1);
     }
 
 #ifdef FINE_GRAINED
-    // Implemented Later
+    // For fine-grained we take a non-unique global lock to prevent resizing
+    // but allow for other operations
+    std::shared_lock<std::shared_mutex> lock_global_ops(global_mutex);
 #endif
 #ifndef FINE_GRAINED
-    // Do course grained locking stuff
+    // Take the global lock for course grained
     std::unique_lock<std::shared_mutex> lock_global_ops(global_mutex);
+#endif
 
     // Need to lock before hashing incase of resize
 
     unsigned long long loc = GET_TABLE_LOC(&key);
+#if FINE_GRAINED
+    // If its fine-grained only take the specific lock for writing
+    std::unique_lock<std::shared_mutex> local_lock(*table[loc].mutex);
+#endif
 
     if (table[loc].valid == false)
     {
@@ -166,21 +177,25 @@ bool ConcurrentHashTable<KeyT, ValT>::insert(KeyT key, ValT value)
     }
     // If we didn't already return then we added the node so return true
     return !already_exists;
-#endif
 }
 
 template <class KeyT, class ValT>
 std::pair<bool, ValT> ConcurrentHashTable<KeyT, ValT>::find(KeyT key)
 {
     std::pair<bool, ValT> retval = std::make_pair(false, ValT());
-#ifdef FINE_GRAINED
-    // Implemented Later
-#endif
-#ifndef FINE_GRAINED
-    // Do course grained locking stuff
-    std::unique_lock<std::shared_mutex> lock_global_ops(global_mutex);
+
+    // Always lock the global one.
+    // In fine grained mode we need the shared lock for global to prevent
+    //     resizing and for course grained the shared lock is needed for
+    //     preventing writes / resizing of the entire structure
+    std::shared_lock<std::shared_mutex> lock_global_ops(global_mutex);
 
     unsigned long long loc = GET_TABLE_LOC(&key);
+
+#if FINE_GRAINED
+    // If fine-grained locking is enabled then we also need to grab the lock for
+    //     that individual index
+    std::shared_lock<std::shared_mutex> local_lock(*table[loc].mutex);
 #endif
 
     // Return false if the value isnt found
@@ -243,12 +258,21 @@ void ConcurrentHashTable<KeyT, ValT>::visualize(std::ostream& os)
  *===================================================================
  */
 
+
 template <class KeyT, class ValT>
-void ConcurrentHashTable<KeyT, ValT>::double_size()
+void ConcurrentHashTable<KeyT, ValT>::double_size(unsigned long long target_size)
 {
     // Take the global lock even if we are in fine-grained mode.  Cant trust the resizing
     //    process to not interfere with other threads.
     std::unique_lock<std::shared_mutex> lock_global_ops(global_mutex);
+
+    // This is really important as a bunch of threads can in theroy all try to resize at the same
+    //     time.. this should not be allowed to happen so if a resize has occured since the function
+    //     was called then just let go of the lock and
+    if (table_size >= target_size)
+    {
+        return;
+    }
 
     // We absoultely need to lock before determining the new size as otherwise two threads trying to
     //     resize the table could do so incorrectly
@@ -262,6 +286,9 @@ void ConcurrentHashTable<KeyT, ValT>::double_size()
     for (unsigned long long i = 0; i<new_size; ++i)
     {
         newtable[i].valid = false;
+#ifdef FINE_GRAINED
+        newtable[i].mutex = new std::shared_mutex();
+#endif
     }
 
     for (unsigned long long i = 0; i<table_size; ++i)
@@ -269,29 +296,47 @@ void ConcurrentHashTable<KeyT, ValT>::double_size()
         // If valid data at this location then move it to the new table
         if (table[i].valid == true)
         {
-            // Copy the first index since it isn't dynamically allocated
-            unsigned long long newloc = GET_NEW_TABLE_LOC(&table[i].kv_pair.key);
-            newtable[newloc] = table[i];
+            hash_table_kv_pair_t<KeyT, ValT> * current_node = &table[i].kv_pair;
 
-            // Copy the separate chaining portions
-            // Use a little trick where we can just use the copied pointers
-            hash_table_kv_pair_t<KeyT, ValT> * current_node = &newtable[newloc].kv_pair;
-            while (current_node->next != nullptr)
+            // Copy all nodes in the chain to their new position
+            bool need_to_delete = false;
+            while (current_node != nullptr)
             {
-                hash_table_kv_pair_t<KeyT, ValT> * next_node = new hash_table_kv_pair_t<KeyT, ValT>;
-                *next_node = *(current_node->next);
-                delete current_node->next;
-                current_node->next = next_node;
-                current_node = current_node->next;
+                unsigned long long newloc = GET_NEW_TABLE_LOC(&current_node->key);
+
+                if (newtable[newloc].valid == false)
+                {
+                    newtable[newloc].valid = true;
+                    newtable[newloc].kv_pair.key = current_node->key;
+                    newtable[newloc].kv_pair.val = current_node->val;
+                    newtable[newloc].kv_pair.next = nullptr;
+                }
+                else
+                {
+                    // If somethings already there,
+                    hash_table_kv_pair_t<KeyT, ValT> * newnode = new hash_table_kv_pair_t<KeyT, ValT>;
+                    newnode->key = current_node->key;
+                    newnode->val = current_node->val;
+                    // Reassign the new node
+                    newnode->next = newtable[newloc].kv_pair.next;
+                    newtable[newloc].kv_pair.next = newnode;
+                }
+                hash_table_kv_pair_t<KeyT, ValT> * next_node = current_node->next;
+                if (need_to_delete == false) need_to_delete = true;
+                else delete current_node;
+                current_node = next_node;
             }
         }
+#ifdef FINE_GRAINED
+        // If we are fine grained then we need to delete the old mutex
+        delete table[i].mutex;
+#endif
     }
     // Clean up the old table and set to the correct size
     table_size = new_size;
     delete [] table;
     table = newtable;
 
-    lock_global_ops.unlock();
 }
 #endif //CONCURRENT_HASH_TABLE_H
 
