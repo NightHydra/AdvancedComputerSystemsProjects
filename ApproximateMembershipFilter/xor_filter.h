@@ -6,9 +6,10 @@
 #define XOR_FILTER_H
 
 
+template <class KeyT, class ValT>
+class XORFilter{
+    XORFilter();
 
-class xor_filter<typename T> {
-    xor_filter()
 };
 
 
