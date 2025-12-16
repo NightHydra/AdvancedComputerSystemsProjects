@@ -6,6 +6,40 @@ import plotting_code as pc
 
 DATA_FILES_BASE_PATH = "data_analysis/raw_data"
 
+DATA_TABLE_BASE_PATH = "data_analysis/tables"
+
+def generate_size_tables(f, target_memory_size, structure):
+    '''
+    :param f: The filehandler to write to
+    :return: None
+    '''
+
+    sizes = [16, 64, 256, 1024, 2048, 4096]
+
+    md_table = "| "
+
+    for s in sizes:
+        md_table += f"|{s}"
+    md_table += "|\n"
+    md_table += "|" + "---|"*7 + "\n"
+
+    for srow in sizes:
+        md_table += f"|{srow}|"
+        for scol in sizes:
+            # Given the target size compute which value of k gives the best esitmate of that size
+            target_k = target_memory_size/(8*(srow+scol))
+            closest_value = min(sizes, key=lambda x: abs(x - target_k))
+
+            data = fetch_data_from_file(DATA_FILES_BASE_PATH + "/size_sweep/"+
+                                        f"{structure}_sizesweep_{srow}_{closest_value}_{scol}.csv", "GFLOPS")
+
+            md_table += f"(k = {closest_value}) : {data[0]:.2f}|"
+        md_table += "\n"
+    md_table += "\n"
+    f.write(md_table)
+
+
+
 def fetch_data_from_file(file_to_read, metrics):
 
     datacol = pd.read_csv(file_to_read, delimiter=",").astype(float)[metrics]
@@ -101,6 +135,15 @@ def main():
 
     pc.plot_double_bar_graph(data8[0], data8[1], primx_vals, ["GEMM", "SPMM"], "Density and Structure",
                              "GFLOPS", "Effects of Density Sweep using 8 thread", "sparsity_sweep_8_thread.png")
+
+
+    # ----- SIZE SWEEEP ---- #
+    memsize_range = [32000, 2000000, 20000000, 60000000]
+
+    with open (DATA_TABLE_BASE_PATH+"/sizes_sweep.txt", "w") as f:
+        for s in memsize_range:
+            generate_size_tables(f, s, "gemm")
+            generate_size_tables(f, s, "spmm")
 
 
 
