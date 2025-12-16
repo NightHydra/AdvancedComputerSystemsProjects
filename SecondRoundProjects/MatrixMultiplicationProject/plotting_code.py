@@ -27,7 +27,7 @@ def plot_double_bar_graph(means, stds, primx_titles : list[str], second_primx_ti
     n_groups = len(means)
 
     # Calculate bar width to ensure bars fit nicely within the category space (0.8 is a good total width)
-    bar_width = 0.8 / n_prim_categories
+    bar_width = 1.6 / (n_prim_categories*n_groups)
 
     # Set the central positions of the primary category ticks on the X-axis
     ind = np.arange(n_prim_categories)
@@ -43,7 +43,7 @@ def plot_double_bar_graph(means, stds, primx_titles : list[str], second_primx_ti
         # i=0 (first group): offset = ind + (0 - 1) * bar_width -> ind - bar_width
         # i=1 (middle group): offset = ind + (1 - 1) * bar_width -> ind
         # i=2 (last group): offset = ind + (2 - 1) * bar_width -> ind + bar_width
-        offset = ind + (i - (n_prim_categories-1) / 2) * bar_width
+        offset = ind + (i - (n_groups - 1) / 2) * bar_width
 
         # Plot the bars for the current secondary group
         ax.bar(
