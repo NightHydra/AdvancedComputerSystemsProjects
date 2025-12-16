@@ -224,4 +224,12 @@ is far faster than dense multiplication as the matrix is increasingly spare.  Ad
 provide a massive speedup especially on larger matrices.  Other than that, no other factors appeared to make a major
 impact on performance.  Even SIMD did not impact performance as much as one would think.
 
+## Sources
+
+I used the following two sources to help with the implementations of the matrix
+multiplication algorithms.
+
+1. [GEMM Algorithm](https://www.cs.sfu.ca/~ashriram/Courses/CS7ARCH/hw/hw4.html#github-clone-link)
+2. [SPMM Representation](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_(CSR,_CRS_or_Yale_format))
+
 
