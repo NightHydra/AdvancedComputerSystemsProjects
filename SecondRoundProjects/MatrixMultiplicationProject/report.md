@@ -191,7 +191,7 @@ For both algorithms, we used double floating point numbers meaning our arithmeti
 
 Therefore, we compute a roofline performance of around 64GB for GEMM and around
 940GFLOPS of SPMM (though again this one is flawed).  In theory, the memory bandwidth of the machine being tested
-is 40GB / s meaning we are getting slightly better performance most likely due to cache prefetching.
+is 40GB / s as determined in a previous project for this course meaning we are getting slightly better performance most likely due to cache prefetching.
 
 ## Density Sweep and SPMM performance
 
@@ -219,5 +219,9 @@ than GEMM meaning at some point the fact that more overhead is required to SPMM 
 
 ## Conclusion
 
+Looking at the data, the main conclusion we can see is that the sparse matrix representation
+is far faster than dense multiplication as the matrix is increasingly spare.  Additionally, multithreading proved to 
+provide a massive speedup especially on larger matrices.  Other than that, no other factors appeared to make a major
+impact on performance.  Even SIMD did not impact performance as much as one would think.
 
 
